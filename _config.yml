@@ -1,0 +1,25 @@
+title: Підручник SQL Server
+description: Безкоштовний покроковий курс Microsoft SQL Server і T-SQL українською мовою — від SELECT до збережених процедур.
+lang: uk
+baseurl: /DBExamples
+url: https://shpil1993.github.io
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - tools/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

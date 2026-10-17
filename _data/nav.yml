@@ -1,0 +1,86 @@
+- section: Підручник SQL Server
+  pages:
+    - { title: "SQL Server: Головна", url: /tutorial/home.html }
+    - { title: "Вступ до SQL Server", url: /tutorial/intro.html }
+    - { title: "Реляційні СУБД (RDBMS)", url: /tutorial/rdbms.html }
+    - { title: "Встановлення та інструменти", url: /tutorial/install.html }
+    - { title: "Демо-база даних", url: /tutorial/demo-db.html }
+
+- section: SQL у SQL Server
+  pages:
+    - { title: "SELECT", url: /tutorial/select.html }
+    - { title: "SELECT DISTINCT", url: /tutorial/distinct.html }
+    - { title: "WHERE", url: /tutorial/where.html }
+    - { title: "AND, OR, NOT", url: /tutorial/and-or-not.html }
+    - { title: "ORDER BY", url: /tutorial/order-by.html }
+    - { title: "INSERT INTO", url: /tutorial/insert.html }
+    - { title: "Значення NULL", url: /tutorial/null-values.html }
+    - { title: "UPDATE", url: /tutorial/update.html }
+    - { title: "DELETE", url: /tutorial/delete.html }
+    - { title: "TOP та OFFSET FETCH", url: /tutorial/top.html }
+    - { title: "MIN() та MAX()", url: /tutorial/min-max.html }
+    - { title: "COUNT(), AVG(), SUM()", url: /tutorial/count-avg-sum.html }
+    - { title: "LIKE", url: /tutorial/like.html }
+    - { title: "Символи-шаблони", url: /tutorial/wildcards.html }
+    - { title: "IN", url: /tutorial/in.html }
+    - { title: "BETWEEN", url: /tutorial/between.html }
+    - { title: "Псевдоніми (Aliases)", url: /tutorial/aliases.html }
+    - { title: "З'єднання (Joins)", url: /tutorial/joins.html }
+    - { title: "INNER JOIN", url: /tutorial/inner-join.html }
+    - { title: "LEFT JOIN", url: /tutorial/left-join.html }
+    - { title: "RIGHT JOIN", url: /tutorial/right-join.html }
+    - { title: "FULL JOIN", url: /tutorial/full-join.html }
+    - { title: "CROSS JOIN", url: /tutorial/cross-join.html }
+    - { title: "Self Join", url: /tutorial/self-join.html }
+    - { title: "UNION", url: /tutorial/union.html }
+    - { title: "GROUP BY", url: /tutorial/group-by.html }
+    - { title: "HAVING", url: /tutorial/having.html }
+    - { title: "EXISTS", url: /tutorial/exists.html }
+    - { title: "ANY та ALL", url: /tutorial/any-all.html }
+    - { title: "SELECT INTO", url: /tutorial/select-into.html }
+    - { title: "INSERT INTO SELECT", url: /tutorial/insert-select.html }
+    - { title: "CASE", url: /tutorial/case.html }
+    - { title: "Функції для NULL", url: /tutorial/null-functions.html }
+    - { title: "Коментарі", url: /tutorial/comments.html }
+    - { title: "Оператори", url: /tutorial/operators.html }
+
+- section: База даних SQL Server
+  pages:
+    - { title: "CREATE DATABASE", url: /tutorial/create-db.html }
+    - { title: "DROP DATABASE", url: /tutorial/drop-db.html }
+    - { title: "BACKUP DATABASE", url: /tutorial/backup-db.html }
+    - { title: "CREATE TABLE", url: /tutorial/create-table.html }
+    - { title: "DROP TABLE", url: /tutorial/drop-table.html }
+    - { title: "ALTER TABLE", url: /tutorial/alter-table.html }
+    - { title: "Обмеження (Constraints)", url: /tutorial/constraints.html }
+    - { title: "NOT NULL", url: /tutorial/not-null.html }
+    - { title: "UNIQUE", url: /tutorial/unique.html }
+    - { title: "PRIMARY KEY", url: /tutorial/primary-key.html }
+    - { title: "FOREIGN KEY", url: /tutorial/foreign-key.html }
+    - { title: "CHECK", url: /tutorial/check.html }
+    - { title: "DEFAULT", url: /tutorial/default.html }
+    - { title: "CREATE INDEX", url: /tutorial/create-index.html }
+    - { title: "IDENTITY (автоінкремент)", url: /tutorial/identity.html }
+    - { title: "Робота з датами", url: /tutorial/dates.html }
+    - { title: "Представлення (Views)", url: /tutorial/views.html }
+    - { title: "SQL-ін'єкції", url: /tutorial/sql-injection.html }
+
+- section: Програмування на T-SQL
+  pages:
+    - { title: "Змінні та пакети", url: /tutorial/variables.html }
+    - { title: "IF...ELSE та WHILE", url: /tutorial/control-flow.html }
+    - { title: "Збережені процедури", url: /tutorial/stored-procedures.html }
+    - { title: "Функції користувача", url: /tutorial/user-functions.html }
+    - { title: "Тригери", url: /tutorial/triggers.html }
+    - { title: "Транзакції", url: /tutorial/transactions.html }
+    - { title: "TRY...CATCH", url: /tutorial/try-catch.html }
+    - { title: "CTE та віконні функції", url: /tutorial/cte-window.html }
+
+- section: Довідники
+  pages:
+    - { title: "Типи даних", url: /tutorial/data-types.html }
+    - { title: "Рядкові функції", url: /tutorial/string-functions.html }
+    - { title: "Числові функції", url: /tutorial/numeric-functions.html }
+    - { title: "Функції дати й часу", url: /tutorial/date-functions.html }
+    - { title: "Інші функції", url: /tutorial/advanced-functions.html }
+    - { title: "Ключові слова", url: /tutorial/keywords.html }

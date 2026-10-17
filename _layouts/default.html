@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗄️</text></svg>">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+{% assign all_pages = "" | split: "" %}
+{% for s in site.data.nav %}{% for p in s.pages %}{% assign all_pages = all_pages | push: p %}{% endfor %}{% endfor %}
+{% assign current_index = -1 %}
+{% for p in all_pages %}{% if p.url == page.url %}{% assign current_index = forloop.index0 %}{% endif %}{% endfor %}
+
+<header class="topbar">
+  <button class="menu-toggle" id="menuToggle" aria-label="Меню" aria-controls="sidebar" aria-expanded="false">☰</button>
+  <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-mark">SQL</span> Server <span class="brand-sub">підручник</span></a>
+  <nav class="topnav">
+    <a href="{{ '/tutorial/home.html' | relative_url }}">Підручник</a>
+    <a href="{{ '/tutorial/data-types.html' | relative_url }}">Довідник</a>
+    <a href="{{ '/tutorial/demo-db.html' | relative_url }}">Демо-база</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle" aria-label="Змінити тему" title="Світла / темна тема">◐</button>
+</header>
+
+<div class="wrap">
+  <aside class="sidebar" id="sidebar">
+    <input class="nav-search" id="navSearch" type="search" placeholder="Пошук уроку…" aria-label="Пошук уроку">
+    {% for s in site.data.nav %}
+    <div class="nav-section">
+      <h2>{{ s.section }}</h2>
+      <ul>
+        {% for p in s.pages %}
+        <li><a href="{{ p.url | relative_url }}"{% if p.url == page.url %} class="active" aria-current="page"{% endif %}>{{ p.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </aside>
+  <div class="backdrop" id="backdrop"></div>
+
+  <main class="content">
+    {% if current_index >= 0 %}
+      {% assign prev_i = current_index | minus: 1 %}
+      {% assign next_i = current_index | plus: 1 %}
+      {% capture pager %}
+      <div class="pager">
+        {% if prev_i >= 0 %}<a class="btn" href="{{ all_pages[prev_i].url | relative_url }}">❮ Попередній</a>{% else %}<span></span>{% endif %}
+        {% if next_i < all_pages.size %}<a class="btn" href="{{ all_pages[next_i].url | relative_url }}">Наступний ❯</a>{% endif %}
+      </div>
+      {% endcapture %}
+      {{ pager }}
+    {% endif %}
+
+    <article class="lesson">
+      {% if page.title and page.hide_title != true %}<h1>{{ page.h1 | default: page.title }}</h1>{% endif %}
+      {{ content }}
+    </article>
+
+    {% if current_index >= 0 %}{{ pager }}{% endif %}
+
+    <footer class="footer">
+      <p>Навчальний курс з Microsoft SQL Server і T-SQL. Приклади перевірено на SQL Server 2022 з <a href="{{ '/tutorial/demo-db.html' | relative_url }}">демо-базою DemoShop</a>.</p>
+    </footer>
+  </main>
+</div>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

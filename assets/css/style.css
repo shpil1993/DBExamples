@@ -1,0 +1,423 @@
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f4f5f7;
+  --bg-sidebar: #f7f7f8;
+  --text: #1f2328;
+  --text-muted: #59636e;
+  --border: #d9dde3;
+  --accent: #b91c1c;
+  --accent-soft: #fdecec;
+  --accent-text: #ffffff;
+  --topbar: #22272e;
+  --topbar-text: #f0f3f6;
+  --link: #a3171a;
+  --code-bg: #f6f8fa;
+  --code-text: #1f2328;
+  --note-bg: #eef6ff;
+  --note-border: #3b82f6;
+  --warn-bg: #fff7e6;
+  --warn-border: #d97706;
+  --example-bg: #f1f3f5;
+  --tok-keyword: #0033b3;
+  --tok-string: #a31515;
+  --tok-number: #098658;
+  --tok-comment: #6a737d;
+  --tok-func: #795e26;
+  --tok-name: #1f2328;
+  --tok-var: #8a3ffc;
+  --sidebar-w: 270px;
+  --topbar-h: 56px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1216;
+    --bg-soft: #181c22;
+    --bg-sidebar: #14181d;
+    --text: #e6e8eb;
+    --text-muted: #9aa4b1;
+    --border: #2d333b;
+    --accent: #ef4444;
+    --accent-soft: #3a1618;
+    --accent-text: #ffffff;
+    --topbar: #090b0e;
+    --topbar-text: #f0f3f6;
+    --link: #f87171;
+    --code-bg: #161b22;
+    --code-text: #e6edf3;
+    --note-bg: #102033;
+    --note-border: #3b82f6;
+    --warn-bg: #2b1f0b;
+    --warn-border: #d97706;
+    --example-bg: #1b2027;
+    --tok-keyword: #79b8ff;
+    --tok-string: #f0a07a;
+    --tok-number: #85e89d;
+    --tok-comment: #8b949e;
+    --tok-func: #e5c07b;
+    --tok-name: #e6edf3;
+    --tok-var: #c4a7ff;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1216;
+  --bg-soft: #181c22;
+  --bg-sidebar: #14181d;
+  --text: #e6e8eb;
+  --text-muted: #9aa4b1;
+  --border: #2d333b;
+  --accent: #ef4444;
+  --accent-soft: #3a1618;
+  --accent-text: #ffffff;
+  --topbar: #090b0e;
+  --topbar-text: #f0f3f6;
+  --link: #f87171;
+  --code-bg: #161b22;
+  --code-text: #e6edf3;
+  --note-bg: #102033;
+  --note-border: #3b82f6;
+  --warn-bg: #2b1f0b;
+  --warn-border: #d97706;
+  --example-bg: #1b2027;
+  --tok-keyword: #79b8ff;
+  --tok-string: #f0a07a;
+  --tok-number: #85e89d;
+  --tok-comment: #8b949e;
+  --tok-func: #e5c07b;
+  --tok-name: #e6edf3;
+  --tok-var: #c4a7ff;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-padding-top: calc(var(--topbar-h) + 12px); }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a { color: var(--link); }
+a:hover { text-decoration-thickness: 2px; }
+
+/* ---------- Верхня панель ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px;
+  background: var(--topbar);
+  color: var(--topbar-text);
+}
+.brand {
+  color: var(--topbar-text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+.brand-mark {
+  background: var(--accent);
+  color: var(--accent-text);
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-right: 2px;
+}
+.brand-sub { font-weight: 400; opacity: .7; font-size: .95rem; }
+.topnav { display: flex; gap: 4px; margin-left: auto; }
+.topnav a {
+  color: var(--topbar-text);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: .95rem;
+}
+.topnav a:hover { background: rgba(255,255,255,.1); }
+.menu-toggle, .theme-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.25);
+  color: var(--topbar-text);
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  flex: none;
+}
+.menu-toggle { display: none; }
+
+/* ---------- Розмітка ---------- */
+.wrap { display: flex; }
+
+.sidebar {
+  position: sticky;
+  top: var(--topbar-h);
+  height: calc(100vh - var(--topbar-h));
+  width: var(--sidebar-w);
+  flex: none;
+  overflow-y: auto;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  padding: 12px 0 40px;
+}
+.nav-search {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 4px 16px 8px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: .9rem;
+}
+.nav-section h2 {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-muted);
+  margin: 18px 16px 6px;
+}
+.nav-section ul { list-style: none; margin: 0; padding: 0; }
+.nav-section a {
+  display: block;
+  padding: 4px 16px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: .93rem;
+  border-left: 3px solid transparent;
+}
+.nav-section a:hover { background: var(--bg-soft); }
+.nav-section a.active {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-left-color: var(--accent);
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  padding: 24px 40px 40px;
+  max-width: 1000px;
+}
+
+.backdrop { display: none; }
+
+/* ---------- Урок ---------- */
+.lesson h1 {
+  font-size: 2.3rem;
+  line-height: 1.2;
+  margin: 8px 0 20px;
+}
+.lesson h2 {
+  font-size: 1.6rem;
+  margin: 40px 0 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.lesson h3 { font-size: 1.2rem; margin: 28px 0 8px; }
+.lesson p, .lesson li { max-width: 75ch; }
+
+.lesson code {
+  font-family: Consolas, "Cascadia Mono", Menlo, "Liberation Mono", monospace;
+  font-size: .92em;
+}
+.lesson :not(pre) > code {
+  background: var(--bg-soft);
+  color: var(--accent);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.lesson div.highlighter-rouge {
+  position: relative;
+  margin: 12px 0 18px;
+}
+.lesson pre.highlight {
+  background: var(--code-bg);
+  color: var(--code-text);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  margin: 0;
+  line-height: 1.5;
+  font-size: .95rem;
+}
+.copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font: inherit;
+  font-size: .75rem;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .15s;
+}
+.lesson div.highlighter-rouge:hover .copy-btn,
+.copy-btn:focus { opacity: 1; }
+
+/* Блок "Приклад" */
+.example {
+  background: var(--example-bg);
+  border-radius: 6px;
+  padding: 4px 20px 10px;
+  margin: 20px 0;
+}
+.example > h3:first-child, .example > p:first-child strong {
+  margin-top: 14px;
+}
+.example .highlighter-rouge pre.highlight { background: var(--bg); }
+
+/* Примітки */
+.note, .warn {
+  border-left: 4px solid var(--note-border);
+  background: var(--note-bg);
+  padding: 10px 16px;
+  border-radius: 4px;
+  margin: 18px 0;
+}
+.warn { border-left-color: var(--warn-border); background: var(--warn-bg); }
+.note > :first-child, .warn > :first-child { margin-top: 4px; }
+.note > :last-child, .warn > :last-child { margin-bottom: 4px; }
+
+/* Результат запиту */
+.result-label {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-muted);
+  margin: 10px 0 4px;
+}
+.result-more { font-size: .85rem; color: var(--text-muted); margin-top: 4px; }
+
+/* Таблиці */
+.table-scroll { overflow-x: auto; margin: 10px 0 18px; }
+.lesson table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: .9rem;
+  margin: 10px 0 18px;
+}
+.table-scroll table { margin: 0; }
+.lesson th, .lesson td {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.lesson th { background: var(--bg-soft); font-weight: 600; }
+.lesson tr:nth-child(even) td { background: color-mix(in srgb, var(--bg-soft) 50%, transparent); }
+.lesson td code { white-space: nowrap; }
+.null { color: var(--text-muted); font-style: italic; }
+
+/* Навігація між уроками */
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 8px 0;
+}
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-text);
+  text-decoration: none;
+  padding: 7px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: .95rem;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn-lg { padding: 12px 26px; font-size: 1.1rem; }
+
+.footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: .88rem;
+}
+
+/* Головна сторінка */
+.hero {
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding: 28px 28px 32px;
+  margin-bottom: 28px;
+}
+.hero h1 { margin-top: 0; }
+.hero p { font-size: 1.1rem; }
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.toc-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 18px 12px;
+}
+.toc-card h3 { margin-top: 14px; }
+.toc-card ol { padding-left: 20px; margin: 0; }
+.toc-card li { margin: 2px 0; }
+
+/* ---------- Підсвічування синтаксису (Rouge) ---------- */
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .ow { color: var(--tok-keyword); font-weight: 600; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sc, .highlight .se, .highlight .sx { color: var(--tok-string); }
+.highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .il { color: var(--tok-number); }
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cs, .highlight .cp { color: var(--tok-comment); font-style: italic; }
+.highlight .nf, .highlight .nb, .highlight .bp { color: var(--tok-func); }
+.highlight .n, .highlight .nx, .highlight .p, .highlight .o { color: var(--tok-name); }
+.highlight .nv, .highlight .vg, .highlight .vi { color: var(--tok-var); }
+.highlight .err { color: inherit; background: none; }
+
+/* ---------- Адаптивність ---------- */
+@media (max-width: 900px) {
+  .menu-toggle { display: inline-block; }
+  .topnav { display: none; }
+  .theme-toggle { margin-left: auto; }
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: var(--topbar-h);
+    z-index: 25;
+    transform: translateX(-100%);
+    transition: transform .2s ease;
+    box-shadow: 2px 0 12px rgba(0,0,0,.2);
+  }
+  body.menu-open .sidebar { transform: none; }
+  body.menu-open .backdrop {
+    display: block;
+    position: fixed;
+    inset: var(--topbar-h) 0 0 0;
+    background: rgba(0,0,0,.35);
+    z-index: 20;
+  }
+  .content { padding: 16px 16px 32px; }
+  .lesson h1 { font-size: 1.8rem; }
+  .lesson h2 { font-size: 1.35rem; }
+  .hero { padding: 20px 16px 24px; }
+}
+@media (max-width: 420px) {
+  .brand-sub { display: none; }
+}
