@@ -1,6 +1,6 @@
 ---
-title: SELECT INTO
-h1: Інструкція SELECT INTO
+title: "SELECT INTO"
+h1: "Інструкція SELECT INTO"
 ---
 
 Інструкція `SELECT INTO` копіює дані з однієї таблиці в **нову** таблицю.

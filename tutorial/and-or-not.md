@@ -1,6 +1,6 @@
 ---
 title: "AND, OR, NOT"
-h1: Оператори AND, OR та NOT
+h1: "Оператори AND, OR та NOT"
 ---
 
 Умову `WHERE` можна поєднувати з операторами `AND`, `OR` та `NOT`.

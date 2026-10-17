@@ -1,6 +1,6 @@
 ---
-title: Функції для NULL
-h1: Функції ISNULL(), COALESCE() та NULLIF()
+title: "Функції для NULL"
+h1: "Функції ISNULL(), COALESCE() та NULLIF()"
 ---
 
 Значення `NULL` у виразах часто дає небажаний результат. SQL Server має функції, які допомагають з ним працювати.

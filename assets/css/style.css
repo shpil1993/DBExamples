@@ -327,7 +327,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .lesson th { background: var(--bg-soft); font-weight: 600; }
 .lesson tr:nth-child(even) td { background: color-mix(in srgb, var(--bg-soft) 50%, transparent); }
-.lesson td code { white-space: nowrap; }
+.lesson td code { white-space: normal; word-break: break-word; }
 .null { color: var(--text-muted); font-style: italic; }
 
 /* Навігація між уроками */

@@ -1,6 +1,6 @@
 ---
-title: UPDATE
-h1: Інструкція UPDATE
+title: "UPDATE"
+h1: "Інструкція UPDATE"
 ---
 
 Інструкція `UPDATE` змінює наявні записи в таблиці.

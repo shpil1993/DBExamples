@@ -3,3 +3,5 @@ _site/
 .sass-cache/
 vendor/
 __pycache__/
+.bundle/
+Gemfile.lock

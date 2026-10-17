@@ -1,5 +1,5 @@
 ---
-title: Вступ до SQL Server
+title: "Вступ до SQL Server"
 ---
 
 ## Що таке SQL Server?

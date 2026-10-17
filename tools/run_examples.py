@@ -119,7 +119,9 @@ def run_sql(sql, max_rows):
         conn.close()
     if not parts:
         total = sum(messages)
-        return f'<p class="result-more">Запит виконано. Змінено рядків: {total}</p>'
+        if total:
+            return f'<p class="result-more">Запит виконано. Змінено рядків: {total}</p>'
+        return '<p class="result-more">Команди виконано успішно.</p>'
     return "\n".join(parts)
 
 

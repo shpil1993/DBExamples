@@ -1,6 +1,6 @@
 ---
-title: INSERT INTO SELECT
-h1: Інструкція INSERT INTO SELECT
+title: "INSERT INTO SELECT"
+h1: "Інструкція INSERT INTO SELECT"
 ---
 
 Інструкція `INSERT INTO SELECT` копіює дані з однієї таблиці та вставляє їх в **іншу, вже існуючу** таблицю.

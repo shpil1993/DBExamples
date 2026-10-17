@@ -1,6 +1,6 @@
 ---
-title: BETWEEN
-h1: Оператор BETWEEN
+title: "BETWEEN"
+h1: "Оператор BETWEEN"
 ---
 
 Оператор `BETWEEN` вибирає значення в заданому **діапазоні**. Значеннями можуть бути числа, текст або дати.
@@ -70,20 +70,21 @@ WHERE Price NOT BETWEEN 10 AND 40;
 
 <div class="example" markdown="1">
 
-Товари з ціною від 10 до 20, які не належать до категорій 1, 2 або 3:
+Товари з ціною від 10 до 20, які не належать до категорій 1 і 2:
 
 ```sql
 SELECT ProductName, Price, CategoryID FROM Products
 WHERE Price BETWEEN 10 AND 20
-  AND CategoryID NOT IN (1, 2, 3);
+  AND CategoryID NOT IN (1, 2);
 ```
 
 <!-- run:start -->
 <div class="result-label">Результат:</div>
 <div class="table-scroll"><table>
 <tr><th>ProductName</th><th>Price</th><th>CategoryID</th></tr>
+<tr><td>Pavlova</td><td>17.45</td><td>3</td></tr>
 </table></div>
-<p class="result-more">Рядків: 0</p>
+<p class="result-more">Рядків: 1</p>
 <!-- run:end -->
 
 </div>

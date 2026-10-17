@@ -1,5 +1,5 @@
 ---
-title: Головна
+title: "Головна"
 hide_title: true
 ---
 

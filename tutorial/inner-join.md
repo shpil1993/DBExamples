@@ -1,6 +1,6 @@
 ---
-title: INNER JOIN
-h1: INNER JOIN
+title: "INNER JOIN"
+h1: "INNER JOIN"
 ---
 
 `INNER JOIN` вибирає рядки, для яких є відповідні значення в **обох** таблицях.

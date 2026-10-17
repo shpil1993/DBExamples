@@ -1,6 +1,6 @@
 ---
-title: INSERT INTO
-h1: Інструкція INSERT INTO
+title: "INSERT INTO"
+h1: "Інструкція INSERT INTO"
 ---
 
 Інструкція `INSERT INTO` додає нові записи до таблиці.

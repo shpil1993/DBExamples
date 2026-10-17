@@ -1,6 +1,6 @@
 ---
-title: CROSS JOIN
-h1: CROSS JOIN
+title: "CROSS JOIN"
+h1: "CROSS JOIN"
 ---
 
 `CROSS JOIN` повертає **всі можливі комбінації** рядків з обох таблиць (декартовий добуток).

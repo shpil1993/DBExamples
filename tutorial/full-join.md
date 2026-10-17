@@ -1,6 +1,6 @@
 ---
-title: FULL JOIN
-h1: FULL OUTER JOIN
+title: "FULL JOIN"
+h1: "FULL OUTER JOIN"
 ---
 
 `FULL OUTER JOIN` (або просто `FULL JOIN`) повертає **всі** рядки з обох таблиць. Рядки, що мають збіг, об'єднуються; для рядків без збігу стовпці іншої таблиці отримують значення `NULL`.

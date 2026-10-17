@@ -1,6 +1,6 @@
 ---
-title: DELETE
-h1: Інструкція DELETE
+title: "DELETE"
+h1: "Інструкція DELETE"
 ---
 
 Інструкція `DELETE` видаляє наявні записи з таблиці.

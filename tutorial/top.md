@@ -1,6 +1,6 @@
 ---
-title: TOP та OFFSET FETCH
-h1: TOP та OFFSET ... FETCH
+title: "TOP та OFFSET FETCH"
+h1: "TOP та OFFSET ... FETCH"
 ---
 
 У MySQL для обмеження кількості рядків використовується `LIMIT`. У SQL Server для цього є два інструменти:

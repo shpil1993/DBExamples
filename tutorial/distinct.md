@@ -1,6 +1,6 @@
 ---
-title: SELECT DISTINCT
-h1: Інструкція SELECT DISTINCT
+title: "SELECT DISTINCT"
+h1: "Інструкція SELECT DISTINCT"
 ---
 
 Інструкція `SELECT DISTINCT` повертає лише **унікальні** (різні) значення.

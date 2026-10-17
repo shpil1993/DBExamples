@@ -1,6 +1,6 @@
 ---
-title: RIGHT JOIN
-h1: RIGHT JOIN
+title: "RIGHT JOIN"
+h1: "RIGHT JOIN"
 ---
 
 `RIGHT JOIN` повертає **всі** рядки з правої таблиці (`table2`) і відповідні рядки з лівої таблиці (`table1`). Якщо збігу немає, стовпці лівої таблиці отримують значення `NULL`.

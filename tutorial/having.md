@@ -1,6 +1,6 @@
 ---
-title: HAVING
-h1: Умова HAVING
+title: "HAVING"
+h1: "Умова HAVING"
 ---
 
 Умова `HAVING` з'явилася в SQL тому, що в `WHERE` **не можна** використовувати агрегатні функції.

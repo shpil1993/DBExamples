@@ -1,6 +1,6 @@
 ---
 title: "SQL Server: Головна"
-h1: Підручник SQL Server
+h1: "Підручник SQL Server"
 ---
 
 **SQL Server** — це система керування реляційними базами даних (СКБД) від компанії Microsoft.

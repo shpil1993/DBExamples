@@ -18,8 +18,8 @@ defaults:
       layout: default
 
 exclude:
-  - tools/
+  - tools
   - README.md
   - Gemfile
   - Gemfile.lock
-  - vendor/
+  - vendor
